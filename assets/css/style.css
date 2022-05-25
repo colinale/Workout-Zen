@@ -1,0 +1,51 @@
+/*variables*/
+:root {
+    --primary-color: #0C2A53;
+    --secondary-color: #308996;
+    --tertiary-color: #D73D23;
+    --quarternary-color: #EEA66D;
+}
+/*varables end*/
+
+/*browser styling*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /*end broswer styling*/
+
+  /*body styling*/
+body{
+      background-color: var(--primary-color);
+      font-family:'Open Sans', sans-serif;
+  }
+  /*body end*/
+
+  /*main styling*/
+  /* main{ */
+      /*trying to make the main have some distinction since I can't an opaque background image*/
+    /* background-color: rgba(12, 42, 83, .5); */
+    /* border-radius: 10px;
+  } */
+
+  .title, .tag-line, .exercise-title {
+      color: var(--tertiary-color);
+  }
+
+  .quote-container {
+      border-bottom: var(--quarternary-color) solid 1px;
+  }
+
+  .search, .results {
+      background-color: var(--secondary-color);
+  }
+
+  .description{
+    border-bottom: var(--quarternary-color) solid 1px;
+}
+
+  #search-btn{
+    background-color: var(--tertiary-color);
+  }
+  /*main end*/
