@@ -5,9 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <title>Workout Zen</title>
 </head>
 <body>
+    <header class="header">
+        <h1 class="title">Workout Zen</h1>
+        <img src="./assets/images/icon.png" alt="Workout Zen's logo: a lotus flower and a barbell" class="logo h-14 w-17 mx-auto lg:pl-16" />
+        <h2 class="tag-line">
+            Taking the Stress Out of Working Out
+        </h2>
+    </header>
+
+    <main>
+        <div class="section-div">
+            <section class="quote-container">
+                <h3 class="quote">"Just do it!"</h3>
+                <h4 class="author">- Nike</h4>
+            </section>
+            <div class="search-exercise-div">
+                <section class="search">
+                    <input name="musclegroup" id="muscle-group" type="text" autofocus="true"
+                        class="form-input" placeholder="muscle group" />
+                    <button type="submit" class="button" id="search-btn">
+                        Get Started
+                    </button>
+                </section>
+                <section class="results">
+                    <div class="description">
+                        <h3 class="exercise-title underline">Exercise Title</h3>
+                        <p class="exercise-details">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
+                            temporibus praesentium repudiandae iusto explicabo dolore quos
+                            distinctio dolorem repellendus repellat dignissimos cum officia
+                            provident sint, doloremque doloribus voluptatum? Suscipit, ipsa!
+                        </p>
+                    </div>
+                    <div class="image-video">
+                        <img src="./assets/images/vidplace.png" alt="exercise video image" class="video-placeholder w-4/5 mx-auto" />
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h5 class="footer-info text-center text-white">
+            &copy; Workout Zen 2022
+        </h5>
+    </footer>
 
     <script src="./assets/js/quotes.js"></script>
     <script src="./assets/js/workout.js"></script>
