@@ -50,14 +50,7 @@ header h2 {
   font-size: 25px;
 }
 
-.about-section {
-  background-color: var(--secondary-color);
-  padding-bottom: 100px;
-  align-self: center;
-  padding: 10px 10px 10px 10px;
-}
-
-.search-exercise-div {
+.nav-index-div {
   padding-top: 100px;
 }
 /*Header End*/
@@ -67,22 +60,19 @@ main {
   background-image: url(../images/potentialback.png);
   background-size: cover;
 }
-.quote-container {
-  border-bottom: var(--quarternary-color) solid 1px;
-  padding-bottom: 10px;
-}
 
 .search,
 .results {
   background-color: var(--secondary-color);
+  background-size: cover;
+}
+
+.description {
+  border-bottom: var(--quarternary-color) solid 1px;
 }
 
 #target-btn {
   text-align: center;
   background: lightgray;
-}
-
-#search-btn {
-  background-color: var(--tertiary-color);
 }
 /*Main End*/

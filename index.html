@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,52 +12,71 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <title>Workout Zen</title>
 </head>
+
 <body>
-    <header class="header flex sm:flex-col md: flex-col lg:flex-row lg:px-2 lg:py-2 lg:justify-evenly">
-        <h1 class="title text-2xl text-center mt-2.5 lg:text-left lg:text-4xl">Workout Zen</h1>
-        <img src="./assets/images/logo.png" alt="Workout Zen's logo: a lotus flower and a barbell" class="logo h-14 w-17 mx-auto lg:pl-16" />
-        <h2 class="tag-line text-md text-center">
-            Taking the Stress Out of Working Out
-        </h2>
+    <!-- Header -->
+    <header>
+        <img src="./assets/images/logo.png" alt="Workout Zen's logo: a lotus flower and a barbell" />
+        <div class="header-text">
+            <h1>Workout Zen</h1>
+            <h2>Taking the Stress Out of Working Out</h2>
+        </div>
     </header>
 
-    <main class="bg-fixed w-7/8">
+    <main class="bg-fixed w-7/8 mb-5">
+        <!-- Quotes -->
         <div class="section-div flex flex-col align-center">
             <section class="quote-container w-5/6 mx-auto my-1.5 lg:my-5 lg:text-lg">
-                <h3 class="quote text-center text-white" id="quoteText">"Just do it!"</h3>
-                <h4 class="author text-center text-white" id="quoteAuthor">- Nike</h4>
+                <h3 class="quote text-center text-white" id="quoteText"></h3>
+                <h4 class="author text-center text-white" id="quoteAuthor"></h4>
             </section>
-            <div class="search-exercise-div flex sm:flex-col md: flex-col lg:flex-row lg:w-5/6 lg:mx-auto">
-                <section class="search w-5/6 lg:w-1/3 flex flex-col mx-auto rounded my-2 py-2.5 lg:py-auto lg:h-1/3 lg:mt-0">
-                    <input name="musclegroup" id="muscle-group" type="text" autofocus="true"
-                        class="form-input w-2/3 mx-auto" placeholder="muscle group" />
+        </div>
+        <!-- About Section -->
+        <section class="about-section rounded w-5/6 lg:mx-auto">
+            <h5 class="about-title text-center text-white underline">About Workout Zen</h5>
+            <p class="about-info w-4/5 text-white px-2 py-2 mx-auto">Working out doesn't have to stress you out! We
+                are here to help you feel calm and motivated to reach your fitness goals. Let our motivational
+                quotes inspire you to let your stress melt away. Then target a muscle group to learn a new exercise.
+            </p>
+        </section>
+
+        <div class="search-exercise-div flex sm:flex-col lg:flex-row w-5/6 mx-auto">
+            <!-- Buttons/Search -->
+            <div class="buttons-div flex flex-col sm:w-5/6 lg:w-1/3">
+                <div class="search flex flex-col mx-auto rounded my-2 py-2.5 w-5/6 lg:py-auto lg:mt-0">
+                    <!-- Buttons -->
+                    <button type="submit" class="button w-1/2 mx-auto mt-1 text-black rounded"
+                        id="target-btn">Abs</button>
+                </div>
+
+                <div class="search flex flex-col mx-auto rounded my-2 py-2.5 w-5/6 lg:py-auto lg:mt-0">
+                    <!-- Search -->
+                    <input name="musclegroup" id="muscle-group" type="text" autofocus="true" class="form-input mx-auto"
+                        placeholder="muscle group" />
                     <button type="submit" class="button w-1/2 mx-auto mt-1 text-white rounded" id="search-btn">
                         Get Started
                     </button>
+                </div>
+            </div>
+
+            <!-- Excercises -->
+            <div class="results h-full flex flex-col lg:ml-2 rounded py-2.5 mx-auto sm:w-5/6 lg:w-2/3">
+                <section class="description w-4/5 text-white px-2 py-2 mx-auto">
+                    <h3 class="exercise-title underline">Exercise List</h3>
+                    <ul class="exercise-list"></ul>
                 </section>
-                <section class="results w-5/6 lg:w-2/3 h-full flex flex-col mx-auto lg:ml-2 rounded py-2.5">
-                    <div class="description w-4/5 text-white px-2 py-2 mx-auto">
-                        <h3 class="exercise-title underline">Exercise Title</h3>
-                        <p class="exercise-details">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-                            temporibus praesentium repudiandae iusto explicabo dolore quos
-                            distinctio dolorem repellendus repellat dignissimos cum officia
-                            provident sint, doloremque doloribus voluptatum? Suscipit, ipsa!
-                        </p>
-                    </div>
-                    <div class="image-video mt-2">
-                        <img src="./assets/images/vidplace.png" alt="exercise video image" class="video-placeholder w-4/5 mx-auto" />
-                    </div>
                 </section>
             </div>
-        </div>
     </main>
-    <footer>
-        <h5 class="footer-info text-center text-white">
+
+    <!-- Footer -->
+    <footer class="h-20">
+        <h6 class="footer-info text-center text-white">
             &copy; Workout Zen 2022
-        </h5>
+        </h6>
     </footer>
     <script src="./assets/js/quotes.js"></script>
     <script src="./assets/js/workout.js"></script>
 </body>
+
 </html>
