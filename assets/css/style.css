@@ -22,6 +22,55 @@ body{
   }
   /*body end*/
 
+
+/* Header Start */
+
+header {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+header img {
+  width: 20%;
+  height: 20%;
+}
+
+.header-text {
+  text-align: center;
+}
+
+header h1 {
+  color: #F3DDB3;
+  font-size: 50px;
+}
+
+header h2 {
+  color: #D73D23;
+  font-size: 25px;
+}
+
+.about-section {
+  background-color: var(--secondary-color);
+  padding-bottom: 100px;
+  align-self: center;
+  padding: 10px 10px 10px 10px;
+}
+
+.search-exercise-div {
+  padding-top: 100px;
+}
+
+#target-btn {
+  text-align: center;
+  background: lightgray;
+}
+
+
+
+
   /*main styling*/
   /* main{ */
       /*trying to make the main have some distinction since I can't an opaque background image*/
@@ -29,12 +78,13 @@ body{
     /* border-radius: 10px;
   } */
 
-  .title, .tag-line, .exercise-title {
+  /* .title, .tag-line, .exercise-title {
       color: var(--tertiary-color);
-  }
+  } */
 
   .quote-container {
       border-bottom: var(--quarternary-color) solid 1px;
+      padding-bottom: 10px;
   }
 
   .search, .results {
