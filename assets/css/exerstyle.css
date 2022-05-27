@@ -1,30 +1,28 @@
-/*variables*/
+/*Variables*/
 :root {
-    --primary-color: #0C2A53;
-    --secondary-color: #308996;
-    --tertiary-color: #D73D23;
-    --quarternary-color: #EEA66D;
+  --primary-color: #0c2a53;
+  --secondary-color: #308996;
+  --tertiary-color: #d73d23;
+  --quarternary-color: #eea66d;
 }
-/*varables end*/
+/*Varables End*/
 
-/*browser styling*/
+/*Browser Styling*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  /*end broswer styling*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*End Broswer Styling*/
 
-  /*body styling*/
-body{
-      background-color: var(--primary-color);
-      font-family:'Open Sans', sans-serif;
-  }
-  /*body end*/
-
+/*Body Styling*/
+body {
+  background-color: var(--primary-color);
+  font-family: "Open Sans", sans-serif;
+}
+/*Body End*/
 
 /* Header Start */
-
 header {
   margin-top: 10px;
   display: flex;
@@ -43,40 +41,38 @@ header img {
 }
 
 header h1 {
-  color: #F3DDB3;
+  color: #f3ddb3;
   font-size: 50px;
 }
 
 header h2 {
-  color: #D73D23;
+  color: #d73d23;
   font-size: 25px;
 }
 
 .nav-index-div {
   padding-top: 100px;
 }
+/*Header End*/
+
+/*Main Styling*/
+main {
+  background-image: url(../images/potentialback.png);
+  background-size: cover;
+}
+
+.search,
+.results {
+  background-color: var(--secondary-color);
+  background-size: cover;
+}
+
+.description {
+  border-bottom: var(--quarternary-color) solid 1px;
+}
 
 #target-btn {
   text-align: center;
   background: lightgray;
 }
-
-  /*main styling*/
-  /* main{ */
-      /*trying to make the main have some distinction since I can't an opaque background image*/
-    /* background-color: rgba(12, 42, 83, .5); */
-    /* border-radius: 10px;
-  } */
-
-  /* .title, .tag-line, .exercise-title {
-      color: var(--tertiary-color);
-  } */
-
-  .search, .results {
-      background-color: var(--secondary-color);
-  }
-
-  .description{
-    border-bottom: var(--quarternary-color) solid 1px;
-}
-  /*main end*/
+/*Main End*/
