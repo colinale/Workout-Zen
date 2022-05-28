@@ -1,5 +1,5 @@
 var muscleEl = document.querySelector("#target-btn");
-//var muscleInputEl = document.querySelector("#muscle-group");
+var exerciseButtonsEl = document.querySelector("#exercise-buttons");
 
 var muscleSubmit = function (event) {
   // prevent page from refreshing
@@ -25,11 +25,24 @@ var exerciseList = function () {
   });
 };
 
-muscleEl.addEventListener("click", muscleSubmit);
+var buttonClickHandler = function (event) {
+  if (muscleGroup) {
+    displayExerciseList(muscleGroup);
+    // clear old content
+    repoContainerEl.textContent = "";
+  }
 
-var absExercises = function (exercises) {
+  // get the language attribute from the clicked element
+  var muscleGroup = event.target.getAttribute("data-language");
+};
+
+var displayExerciseList = function (exercises, muscleGroup) {
+  //console.log(muscleGroup);
   console.log(exercises);
 };
+
+muscleEl.addEventListener("click", muscleSubmit);
+exerciseButtonsEl.addEventListener("click", buttonClickHandler);
 
 // https://wger.de/api/v2/exercisecategory/ exercise categories
 // abs = plank[141] + crunches[41] + flutter kicks [68]
