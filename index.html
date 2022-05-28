@@ -43,9 +43,9 @@
         <div class="search-exercise-div flex sm:flex-col lg:flex-row w-5/6 mx-auto">
             <!-- Buttons/Search -->
             <div class="buttons-div flex flex-col sm:w-5/6 lg:w-1/3">
-                <div class="search flex flex-col mx-auto rounded my-2 py-2.5 w-5/6 lg:py-auto lg:mt-0">
+                <div id="exercise-buttons" class="search flex flex-col mx-auto rounded my-2 py-2.5 w-5/6 lg:py-auto lg:mt-0">
                     <!-- Buttons -->
-                    <button type="submit" class="button w-1/2 mx-auto mt-1 text-black rounded"
+                    <button data-language="abs" class="button w-1/2 mx-auto mt-1 text-black rounded"
                         id="target-btn">Abs</button>
                 </div>
 
@@ -53,7 +53,7 @@
                     <!-- Search -->
                     <input name="musclegroup" id="muscle-group" type="text" autofocus="true" class="form-input mx-auto"
                         placeholder="muscle group" />
-                    <button type="submit" class="button w-1/2 mx-auto mt-1 text-white rounded" id="search-btn">
+                    <button class="button w-1/2 mx-auto mt-1 text-white rounded" id="search-btn">
                         Get Started
                     </button>
                 </div>
