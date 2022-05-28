@@ -1,37 +1,38 @@
-var muscleEl = document.querySelector("#search-btn");
+var muscleEl = document.querySelector("#target-btn");
 //var muscleInputEl = document.querySelector("#muscle-group");
 
 var muscleSubmit = function (event) {
   // prevent page from refreshing
   event.preventDefault();
-
-  // get value from input element
-  var muscleName = muscleInputEl.value.trim();
-
-  if (muscleName) {
-    getMuscleGroup(muscleName);
-
-    // clear old content
-    muscleInputEl.value = "";
-  } else {
-    alert("Please enter a muscle group you want to target");
-  }
+  exerciseList();
 };
 
-var getMuscleGroup = function (muscle) {
-  var muscleApi = "https://wger.de/api/v2/muscle/";
+var exerciseList = function () {
+  var exerciseApi = "https://wger.de/api/v2/exercise/?language=2&limit=200";
+
   // make a get request to url
-  fetch(muscleApi).then(function (response) {
+  fetch(exerciseApi).then(function (response) {
     // request was successful
     if (response.ok) {
-      console.log(response);
       response.json().then(function (data) {
-        console.log(data);
+        var exercises = data;
+        absExercises(exercises);
       });
     } else {
-      alert("Error: Muscle group Not Found");
+      //toast api
+      alert("Error: Exercise Not Found");
     }
   });
 };
 
 muscleEl.addEventListener("click", muscleSubmit);
+
+var absExercises = function (exercises) {
+  console.log(exercises);
+};
+
+// https://wger.de/api/v2/exercisecategory/ exercise categories
+// abs = plank[141] + crunches[41] + flutter kicks [68]
+// exerciseinfo https://wger.de/api/v2/exerciseinfo/
+// "https://wger.de/api/v2/muscle/"
+// translate: https://wger.de/api/v2/exercise/?language=2&status=2&limit=200
