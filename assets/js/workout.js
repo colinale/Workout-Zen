@@ -30,6 +30,7 @@ var exerciseListAbs = function () {
         var plank = data.results[141];
         var flutterKicks = data.results[67];
 
+        exerciseListUlEl.innerHTML = "";
         var absExerciseArray = [crunches, plank, flutterKicks];
         //display each exercise name
         for (var i = 0; i < absExerciseArray.length; i++) {
@@ -52,17 +53,23 @@ var exerciseListArms = function () {
     if (response.ok) {
       response.json().then(function (data) {
         var exercises = data;
-        // var flutterKicks = data.results[67];
+        var bicepCurls = data.results[19];
+        var tricepPress = data.results[169];
+        var pikePush= data.results[139];
         console.log(exercises);
-        // console.log(flutterKicks);
+        console.log(bicepCurls);
+        console.log(tricepPress);
+        console.log(pikePush);
       
-      // var absExerciseArray = [crunches, plank, flutterKicks];
-      // //display each exercise name
-      // for (var i = 0; i < absExerciseArray.length; i++){
-      //   var absExerciseLiEl = document.createElement("li");
-      //   absExerciseLiEl.textContent = absExerciseArray[i].name;
-      //   exerciseListUlEl.appendChild(absExerciseLiEl);
-      // }
+      exerciseListUlEl.innerHTML = "";
+      
+      var armsExerciseArray = [bicepCurls, tricepPress, pikePush];
+      //display each exercise name
+      for (var i = 0; i < armsExerciseArray.length; i++){
+        var armsExerciseLiEl = document.createElement("li");
+        armsExerciseLiEl.textContent = armsExerciseArray[i].name;
+        exerciseListUlEl.appendChild(armsExerciseLiEl);
+      }
       });
     }
   });
