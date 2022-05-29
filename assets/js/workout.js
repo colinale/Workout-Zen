@@ -4,7 +4,6 @@ var exerciseButtonsEl = document.querySelector("#exercise-buttons");
 var exerciseListUlEl = document.querySelector(".exercise-list");
 var alertDivEl = document.querySelector(".alert-div");
 
-
 //this function handles the user clicking each muscle button
 var buttonClickHandler = function (event) {
   var muscleGroup = event.target.getAttribute("data-language");
@@ -35,7 +34,7 @@ var exerciseListAbs = function () {
         //display each exercise name
         for (var i = 0; i < absExerciseArray.length; i++) {
           var absExerciseLiEl = document.createElement("li");
-          absExerciseLiEl.textContent = absExerciseArray[i].name;
+          absExerciseLiEl.innerHTML = "<a href ='./crunches.html'>" + absExerciseArray[i].name + "</a>";
           exerciseListUlEl.appendChild(absExerciseLiEl);
         }
       });
@@ -74,7 +73,6 @@ var exerciseListArms = function () {
     }
   });
 };
-
 
 //this function handles an exercise submission (I think we might need to get rid of this unless we have time)
 // var muscleSubmit = function (event) {
