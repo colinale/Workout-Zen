@@ -55,21 +55,21 @@ var exerciseListArms = function () {
         var exercises = data;
         var bicepCurls = data.results[19];
         var tricepPress = data.results[169];
-        var pikePush= data.results[139];
+        var pikePush = data.results[139];
         console.log(exercises);
         console.log(bicepCurls);
         console.log(tricepPress);
         console.log(pikePush);
-      
-      exerciseListUlEl.innerHTML = "";
-      
-      var armsExerciseArray = [bicepCurls, tricepPress, pikePush];
-      //display each exercise name
-      for (var i = 0; i < armsExerciseArray.length; i++){
-        var armsExerciseLiEl = document.createElement("li");
-        armsExerciseLiEl.textContent = armsExerciseArray[i].name;
-        exerciseListUlEl.appendChild(armsExerciseLiEl);
-      }
+
+        exerciseListUlEl.innerHTML = "";
+
+        var armsExerciseArray = [bicepCurls, tricepPress, pikePush];
+        //display each exercise name
+        for (var i = 0; i < armsExerciseArray.length; i++) {
+          var armsExerciseLiEl = document.createElement("li");
+          armsExerciseLiEl.textContent = armsExerciseArray[i].name;
+          exerciseListUlEl.appendChild(armsExerciseLiEl);
+        }
       });
     }
   });
@@ -84,15 +84,14 @@ var exerciseListArms = function () {
 // };
 // muscleEl.addEventListener("click", muscleSubmit);
 
-
-
+//EXTRA STUFF
 // https://wger.de/api/v2/exercisecategory/ exercise categories
 // abs = plank[141] + crunches[41] + flutter kicks [68]
 // exerciseinfo https://wger.de/api/v2/exerciseinfo/
 // "https://wger.de/api/v2/muscle/"
 // translate: https://wger.de/api/v2/exercise/?language=2&status=2&limit=200
 
-//This is to create an alert using Tailwind, we have to decide where we want this to appear
+//This is to create an alert using Tailwind, if we want to have a submit function
 /* <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
   <strong class="font-bold">Holy smokes!</strong>
   <span class="block sm:inline">Something seriously bad happened.</span>
