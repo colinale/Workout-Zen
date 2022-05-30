@@ -88,3 +88,9 @@ main {
   background-color: var(--tertiary-color);
 }
 /*Main End*/
+
+/* favourite button styles */
+
+.fav-btn {
+  margin-left: 30px;
+}

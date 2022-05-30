@@ -34,14 +34,22 @@ var exerciseListAbs = function () {
         //display each exercise name
         for (var i = 0; i < absExerciseArray.length; i++) {
           var absExerciseLiEl = document.createElement("li");
-          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a> " + " <button id='fav-btn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
-          // console.log(absExerciseArray[i].name);
+          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a> " + " <button id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
+          absExerciseLiEl.id = "textInfo";
           absExerciseLiEl.addEventListener("click", function (evt) {
-            console.log(evt.target.innerHTML);
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
           });
           exerciseListUlEl.appendChild(absExerciseLiEl);
+
+          //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
+
+          var favouriteExerciseEl = document.getElementById("favBtn");
+          favouriteExerciseEl.addEventListener("click", function () {
+            var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
+            console.log(exerciseFav);
+            //localStorage.setItem(exerciseFav);
+          });
         }
       });
     }
@@ -75,8 +83,6 @@ var exerciseListArms = function () {
     }
   });
 };
-
-//favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
 
 //this function handles an exercise submission (I think we might need to get rid of this unless we have time)
 // var muscleSubmit = function (event) {
