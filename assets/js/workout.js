@@ -3,7 +3,7 @@ var muscleEl = document.querySelector("#target-btn");
 var exerciseButtonsEl = document.querySelector("#exercise-buttons");
 var exerciseListUlEl = document.querySelector(".exercise-list");
 var alertDivEl = document.querySelector(".alert-div");
-var templateEL = $("#exercise-template");
+
 
 //this function handles the user clicking each muscle button
 var buttonClickHandler = function (event) {
@@ -26,7 +26,6 @@ var exerciseListAbs = function () {
     // request was successful
     if (response.ok) {
       response.json().then(function (data) {
-        console.log(data);
         var crunches = data.results[41];
         var plank = data.results[141];
         var flutterKicks = data.results[67];
@@ -40,11 +39,12 @@ var exerciseListAbs = function () {
           // console.log(absExerciseArray[i].name);
           absExerciseLiEl.addEventListener("click", function (evt) {
             console.log(evt.target.innerHTML);
-            var exerciseName = absExerciseArray[i].name;
+            var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
           });
           exerciseListUlEl.appendChild(absExerciseLiEl);
         }
+
       });
     }
   });
@@ -63,10 +63,6 @@ var exerciseListArms = function () {
         var bicepCurls = data.results[19];
         var tricepPress = data.results[169];
         var pikePush = data.results[139];
-        console.log(exercises);
-        console.log(bicepCurls);
-        console.log(tricepPress);
-        console.log(pikePush);
 
         exerciseListUlEl.innerHTML = "";
 
@@ -81,6 +77,7 @@ var exerciseListArms = function () {
     }
   });
 };
+
 
 //this function handles an exercise submission (I think we might need to get rid of this unless we have time)
 // var muscleSubmit = function (event) {
