@@ -34,7 +34,7 @@ var exerciseListAbs = function () {
         //display each exercise name
         for (var i = 0; i < absExerciseArray.length; i++) {
           var absExerciseLiEl = document.createElement("li");
-          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a>";
+          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a> " + " <button id='fav-btn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
           // console.log(absExerciseArray[i].name);
           absExerciseLiEl.addEventListener("click", function (evt) {
             console.log(evt.target.innerHTML);

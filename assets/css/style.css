@@ -77,7 +77,9 @@ main {
   background-color: var(--secondary-color);
 }
 
-#target-abs, #target-arms, #target-legs {
+#target-abs,
+#target-arms,
+#target-legs {
   text-align: center;
   background: lightgray;
 }
