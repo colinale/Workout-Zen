@@ -14,8 +14,15 @@ var exerciseData = function(){
       if (response.ok) {
         response.json().then(function (data) {
          console.log(data);
-        var exercise = localStorage.getItem(exerciseName);
+        var exercise = localStorage.getItem("exercises");
         console.log(exercise);
+        
+        for (var i = 0; i < data.length; i++) {
+            if (data.results[i].name == exercise){
+               exerciseTitleEl.textContent = data.results[i].name;
+               exerciseDescriptionEl.textContent = data.results[i].description; 
+            }
+        }
         });
     }
   });
