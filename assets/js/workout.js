@@ -68,10 +68,16 @@ var exerciseListArms = function () {
 
         var armsExerciseArray = [bicepCurls, tricepPress, pikePush];
         //display each exercise name
-        for (var i = 0; i < armsExerciseArray.length; i++) {
-          var armsExerciseLiEl = document.createElement("li");
-          armsExerciseLiEl.textContent = armsExerciseArray[i].name;
-          exerciseListUlEl.appendChild(armsExerciseLiEl);
+        for (var i = 0; i < absExerciseArray.length; i++) {
+          var absExerciseLiEl = document.createElement("li");
+          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a>" + "                        " + " <button>" + "<i class='fa-light fa-heart'>" + "</i>" + "</button>";
+          // console.log(absExerciseArray[i].name);
+          absExerciseLiEl.addEventListener("click", function (evt) {
+            console.log(evt.target.innerHTML);
+            var exerciseName = evt.target.innerHTML;
+            localStorage.setItem("exercises", exerciseName);
+          });
+          exerciseListUlEl.appendChild(absExerciseLiEl);
         }
       });
     }

@@ -14,7 +14,8 @@ var exerciseData = function(){
       if (response.ok) {
         response.json().then(function (data) {
          console.log(data);
-        var exerciseName = document.
+        var exercise = localStorage.getItem(exerciseName);
+        console.log(exercise);
         });
     }
   });
