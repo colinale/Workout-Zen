@@ -67,10 +67,6 @@ main {
   background-image: url(../images/potentialback.png);
   background-size: cover;
 }
-.quote-container {
-  border-bottom: var(--quarternary-color) solid 1px;
-  padding-bottom: 10px;
-}
 
 .search,
 .results {

@@ -61,17 +61,17 @@ main {
   background-size: cover;
 }
 
-.search,
-.results {
-  background-color: var(--secondary-color);
-  background-size: cover;
-}
 
-.description {
+
+/* .description {
   border-bottom: var(--quarternary-color) solid 1px;
+} */
+
+.button-div, .exercise-template {
+  background-color: var(--secondary-color);
 }
 
-#target-btn {
+#goback-btn {
   text-align: center;
   background: lightgray;
 }
