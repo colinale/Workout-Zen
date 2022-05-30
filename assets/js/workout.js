@@ -34,23 +34,24 @@ var exerciseListAbs = function () {
         //display each exercise name
         for (var i = 0; i < absExerciseArray.length; i++) {
           var absExerciseLiEl = document.createElement("li");
-          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a> " + " <button id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
+          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a> " + " <button class='ml-5' id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
           absExerciseLiEl.id = "textInfo";
           absExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
           });
           exerciseListUlEl.appendChild(absExerciseLiEl);
-
-          //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
-
-          var favouriteExerciseEl = document.getElementById("favBtn");
-          favouriteExerciseEl.addEventListener("click", function () {
-            var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
-            console.log(exerciseFav);
-            //localStorage.setItem(exerciseFav);
-          });
         }
+
+        //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
+        var favouriteExerciseEl = document.getElementById("favBtn");
+        favouriteExerciseEl.addEventListener("click", function () {
+          var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
+          //console.log(exerciseFav);
+          localStorage.setItem("favourited", exerciseFav);
+          console.log(localStorage);
+          displayFavourites();
+        });
       });
     }
   });
@@ -75,17 +76,39 @@ var exerciseListArms = function () {
         var armsExerciseArray = [bicepCurls, tricepPress, pikePush];
         //display each exercise name
         for (var i = 0; i < armsExerciseArray.length; i++) {
-          var absExerciseLiEl = document.createElement("li");
-          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a>" + "                        " + " <button>" + "<i class='fa-light fa-heart'>" + "</i>" + "</button>";
-          // console.log(absExerciseArray[i].name);
-          absExerciseLiEl.addEventListener("click", function (evt) {
+          var armsExerciseLiEl = document.createElement("li");
+          //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
+          armsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + armsExerciseArray[i].name + "</a> " + " <button class='ml-5' id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
+          armsExerciseLiEl.id = "textInfo";
+          armsExerciseLiEl.addEventListener("click", function (evt) {
             console.log(evt.target.innerHTML);
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
           });
-          exerciseListUlEl.appendChild(absExerciseLiEl);
+          exerciseListUlEl.appendChild(armsExerciseLiEl);
         }
+
+        //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
+        var favouriteExerciseEl = document.getElementById("favBtn");
+        favouriteExerciseEl.addEventListener("click", function () {
+          var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
+          //console.log(exerciseFav);
+          localStorage.setItem("favourited", exerciseFav);
+          console.log(localStorage);
+          displayFavourites();
+        });
       });
     }
   });
+};
+
+//function for displaying favourite list
+var displayFavourites = function () {
+  var favListEl = document.querySelector("#fav-list");
+  var savedFavourites = localStorage.getItem("favourited");
+  console.log(savedFavourites);
+
+  var favInfoDiv = document.createElement("div");
+  favInfoDiv.innerHTML = savedFavourites;
+  favListEl.appendChild(favInfoDiv);
 };
