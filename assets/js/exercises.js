@@ -3,10 +3,6 @@ var videoLinks = [
       '<iframe width="560" height="315" src="https://www.youtube.com/embed/Xyd_fa5zoEU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
   
       '<iframe width="560" height="315" src="https://www.youtube.com/embed/BQu26ABuVS0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-//   {
-//     Flutter Kicks:
-//       '<iframe width="560" height="315" src="https://www.youtube.com/embed/BQu26ABuVS0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-//   },
 ];
 var exerciseTitleEl = document.getElementById("title");
 var exerciseDescriptionEl = document.getElementById("description");
@@ -22,7 +18,7 @@ var exerciseData = function () {
       response.json().then(function (data) {
         console.log(data.results);
         var currentExercise = localStorage.getItem("exercises");
-        data.results.find(function (exercise, index) {
+        data.results.find(function (exercise) {
           if (exercise.name == currentExercise) {
             var resultData = exercise;
             exerciseTitleEl.innerHTML =
@@ -43,9 +39,3 @@ var exerciseData = function () {
 };
 
 exerciseData();
-//grab info from local storage
-//create variables that have the information specific to crunches, planks and flutter kicks
-//put it in an array??
-//append to exercises page
-
-//youtubeapi feed it a query [0] zero in on exercise as a category
