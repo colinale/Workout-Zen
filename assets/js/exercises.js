@@ -6,7 +6,7 @@ var videoLinks = [
 ];
 var exerciseTitleEl = document.getElementById("title");
 var exerciseDescriptionEl = document.getElementById("description");
-var exerciseVideoDivEl = document.getElementById("video");
+var exerciseImageDivEl = document.getElementById("exercise-image");
 
 var exerciseData = function () {
   var exerciseApi = "https://wger.de/api/v2/exercise/?language=2&limit=200";
@@ -25,7 +25,7 @@ var exerciseData = function () {
               "<h2 class= 'text-white'>" + resultData.name + "</h2";
             exerciseDescriptionEl.innerHTML =
               "<p class= 'text-white'>" + resultData.description + "</p>";
-            exerciseVideoDivEl.innerHTML = videoLinks[0];
+            // exerciseVideoDivEl.innerHTML = videoLinks[0];
           }
         });
       });
