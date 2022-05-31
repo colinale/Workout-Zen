@@ -73,7 +73,17 @@ main {
   background-color: var(--secondary-color);
 }
 
-#target-abs, #target-arms, #target-legs {
+.search :hover {
+  color: var(--tertiary-color);
+}
+
+.exerciseList :hover {
+  color: var(--primary-color);
+}
+
+#target-abs,
+#target-arms,
+#target-legs {
   text-align: center;
   background: lightgray;
 }
@@ -81,4 +91,5 @@ main {
 #search-btn {
   background-color: var(--tertiary-color);
 }
+
 /*Main End*/
