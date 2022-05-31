@@ -111,22 +111,7 @@ var exerciseListArms = function () {
   });
 };
 
-//function for displaying favourite list
-var displayFavourites = function () {
-  var favListEl = document.querySelector("#fav-list");
-  var savedFavourites = localStorage.getItem("favourited");
-  //console.log(savedFavourites);
-
-  var favInfoDiv = document.createElement("div");
-  favInfoDiv.innerHTML = savedFavourites;
-  favListEl.appendChild(favInfoDiv);
-
-  //making sure that there aren't duplicates
-  //if (!savedFavourites) {}
-
-  //clear favourites div function
-};
-
+//this function fetches the exercises from the exercise api for legs and displays the exercises
 var exerciseListLegs = function () {
   var exerciseApi = "https://wger.de/api/v2/exercise/?language=2&limit=200";
 
@@ -155,4 +140,20 @@ var exerciseListLegs = function () {
       });
     }
   });
+};
+
+//function for displaying favourite list
+var displayFavourites = function () {
+  var favListEl = document.querySelector("#fav-list");
+  var savedFavourites = localStorage.getItem("favourited");
+  //console.log(savedFavourites);
+
+  var favInfoDiv = document.createElement("div");
+  favInfoDiv.innerHTML = savedFavourites;
+  favListEl.appendChild(favInfoDiv);
+
+  //making sure that there aren't duplicates
+  //if (savedFavourites) {  }
+
+  //clear favourites div function
 };
