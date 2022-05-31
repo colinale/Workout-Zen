@@ -4,7 +4,6 @@ var exerciseButtonsEl = document.querySelector("#exercise-buttons");
 var exerciseListUlEl = document.querySelector(".exercise-list");
 var alertDivEl = document.querySelector(".alert-div");
 
-
 //this function handles the user clicking each muscle button
 var buttonClickHandler = function (event) {
   var muscleGroup = event.target.getAttribute("data-language");
@@ -12,7 +11,7 @@ var buttonClickHandler = function (event) {
     exerciseListAbs();
   } else if (muscleGroup == "arms") {
     exerciseListArms();
-  } else if (muscleGroup == "legs"){
+  } else if (muscleGroup == "legs") {
     exerciseListLegs();
   }
 };
@@ -38,13 +37,13 @@ var exerciseListAbs = function () {
         for (var i = 0; i < absExerciseArray.length; i++) {
           var absExerciseLiEl = document.createElement("li");
           absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a>";
+          absExerciseLiEl.setAttribute("class", "hover-fn");
           absExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
           });
           exerciseListUlEl.appendChild(absExerciseLiEl);
         }
-
       });
     }
   });
@@ -70,6 +69,7 @@ var exerciseListArms = function () {
         for (var i = 0; i < armsExerciseArray.length; i++) {
           var armsExerciseLiEl = document.createElement("li");
           armsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + armsExerciseArray[i].name + "</a>";
+          armsExerciseLiEl.setAttribute("class", "hover-fn");
           armsExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
@@ -80,7 +80,6 @@ var exerciseListArms = function () {
     }
   });
 };
-
 
 var exerciseListLegs = function () {
   var exerciseApi = "https://wger.de/api/v2/exercise/?language=2&limit=200";
@@ -100,6 +99,7 @@ var exerciseListLegs = function () {
         for (var i = 0; i < legsExerciseArray.length; i++) {
           var legsExerciseLiEl = document.createElement("li");
           legsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + legsExerciseArray[i].name + "</a>";
+          legsExerciseLiEl.setAttribute("class", "hover-fn");
           legsExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
@@ -110,4 +110,3 @@ var exerciseListLegs = function () {
     }
   });
 };
-

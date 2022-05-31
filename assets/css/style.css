@@ -73,7 +73,13 @@ main {
   background-color: var(--secondary-color);
 }
 
-#target-abs, #target-arms, #target-legs {
+.search :hover {
+  color: #d73d23;
+}
+
+#target-abs,
+#target-arms,
+#target-legs {
   text-align: center;
   background: lightgray;
 }
@@ -81,4 +87,5 @@ main {
 #search-btn {
   background-color: var(--tertiary-color);
 }
+
 /*Main End*/
