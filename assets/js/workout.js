@@ -36,7 +36,8 @@ var exerciseListAbs = function () {
         //display each exercise name
         for (var i = 0; i < absExerciseArray.length; i++) {
           var absExerciseLiEl = document.createElement("li");
-          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a>";
+          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a> " + " <button class='ml-5' id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
+          absExerciseLiEl.id = "textInfo";
           absExerciseLiEl.setAttribute("class", "exerciseList");
           absExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
@@ -44,6 +45,16 @@ var exerciseListAbs = function () {
           });
           exerciseListUlEl.appendChild(absExerciseLiEl);
         }
+
+        //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
+        var favouriteExerciseEl = document.getElementById("favBtn");
+        favouriteExerciseEl.addEventListener("click", function () {
+          var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
+          //console.log(exerciseFav);
+          localStorage.setItem("favourited", exerciseFav);
+          console.log(localStorage);
+          displayFavourites();
+        });
       });
     }
   });
@@ -68,7 +79,9 @@ var exerciseListArms = function () {
         //display each exercise name
         for (var i = 0; i < armsExerciseArray.length; i++) {
           var armsExerciseLiEl = document.createElement("li");
-          armsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + armsExerciseArray[i].name + "</a>";
+          //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
+          armsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + armsExerciseArray[i].name + "</a> " + " <button class='heart-btn ml-5' id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
+          armsExerciseLiEl.id = "textInfo";
           armsExerciseLiEl.setAttribute("class", "exerciseList");
           armsExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
@@ -76,11 +89,31 @@ var exerciseListArms = function () {
           });
           exerciseListUlEl.appendChild(armsExerciseLiEl);
         }
+
+        //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
+        var favouriteExerciseEl = document.getElementById("favBtn");
+        favouriteExerciseEl.addEventListener("click", function (e) {
+          if (e.target.classList.contains("heart-btn")) {
+            var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
+            //console.log(exerciseFav);
+            localStorage.setItem("favourited", exerciseFav);
+            console.log(localStorage);
+            displayFavourites();
+          }
+
+          //making sure that there aren't duplicates
+          // if (!exerciseFav) {
+          //   localStorage.setItem("favourited", exerciseFav);
+          //   console.log(localStorage);
+          //   displayFavourites();
+          // }
+        });
       });
     }
   });
 };
 
+//this function fetches the exercises from the exercise api for legs and displays the exercises
 var exerciseListLegs = function () {
   var exerciseApi = "https://wger.de/api/v2/exercise/?language=2&limit=200";
 
@@ -109,4 +142,20 @@ var exerciseListLegs = function () {
       });
     }
   });
+};
+
+//function for displaying favourite list
+var displayFavourites = function () {
+  var favListEl = document.querySelector("#fav-list");
+  var savedFavourites = localStorage.getItem("favourited");
+  //console.log(savedFavourites);
+
+  var favInfoDiv = document.createElement("div");
+  favInfoDiv.innerHTML = savedFavourites;
+  favListEl.appendChild(favInfoDiv);
+
+  //making sure that there aren't duplicates
+  //if (savedFavourites) {  }
+
+  //clear favourites div function
 };

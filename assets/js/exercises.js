@@ -15,10 +15,8 @@ var exerciseData = function () {
         data.results.find(function (exercise) {
           if (exercise.name == currentExercise) {
             var resultData = exercise;
-            exerciseTitleEl.innerHTML =
-              "<h2 class= 'text-white'>" + resultData.name + "</h2";
-            exerciseDescriptionEl.innerHTML =
-              "<p class= 'text-white'>" + resultData.description + "</p>";
+            exerciseTitleEl.innerHTML = "<h2 class= 'text-white'>" + resultData.name + "</h2";
+            exerciseDescriptionEl.innerHTML = "<p class= 'text-white'>" + resultData.description + "</p>";
             var exerciseImg = document.createElement("img");
             exerciseImg.src = "./assets/images/exercise-images/" + resultData.id + ".jpg";
             exerciseImageDivEl.append(exerciseImg);
@@ -26,10 +24,8 @@ var exerciseData = function () {
         });
       });
     } else {
-        exerciseTitleEl.innerHTML =
-        "<h2 class= 'text-white'> Under Construction </h2";
-      exerciseDescriptionEl.innerHTML =
-        "<p class= 'text-white'> Please try another exercise. Sorry for the inconvenience!</p>";
+      exerciseTitleEl.innerHTML = "<h2 class= 'text-white'> Under Construction </h2";
+      exerciseDescriptionEl.innerHTML = "<p class= 'text-white'> Please try another exercise. Sorry for the inconvenience!</p>";
     }
   });
 };
