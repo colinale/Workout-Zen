@@ -93,11 +93,13 @@ var exerciseListArms = function () {
         //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
         var favouriteExerciseEl = document.getElementById("favBtn");
         favouriteExerciseEl.addEventListener("click", function (e) {
-          if (e.target.classList.contains("heart-btn")) var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
-          //console.log(exerciseFav);
-          localStorage.setItem("favourited", exerciseFav);
-          console.log(localStorage);
-          displayFavourites();
+          if (e.target.classList.contains("heart-btn")) {
+            var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
+            //console.log(exerciseFav);
+            localStorage.setItem("favourited", exerciseFav);
+            console.log(localStorage);
+            displayFavourites();
+          }
 
           //making sure that there aren't duplicates
           // if (!exerciseFav) {
