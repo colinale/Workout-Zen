@@ -16,7 +16,6 @@ var exerciseData = function () {
     // request was successful
     if (response.ok) {
       response.json().then(function (data) {
-        console.log(data.results);
         var currentExercise = localStorage.getItem("exercises");
         data.results.find(function (exercise) {
           if (exercise.name == currentExercise) {
@@ -25,7 +24,9 @@ var exerciseData = function () {
               "<h2 class= 'text-white'>" + resultData.name + "</h2";
             exerciseDescriptionEl.innerHTML =
               "<p class= 'text-white'>" + resultData.description + "</p>";
-            // exerciseVideoDivEl.innerHTML = videoLinks[0];
+            var exerciseImg = document.createElement("img");
+            exerciseImg.src = "./assets/images/exercise-images/" + resultData.id + ".jpg";
+            exerciseImageDivEl.append(exerciseImg);
           }
         });
       });
