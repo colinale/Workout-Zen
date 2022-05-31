@@ -73,6 +73,14 @@ main {
   background-color: var(--secondary-color);
 }
 
+.search :hover {
+  color: var(--tertiary-color);
+}
+
+.exerciseList :hover {
+  color: var(--primary-color);
+}
+
 #target-abs,
 #target-arms,
 #target-legs {
@@ -83,6 +91,7 @@ main {
 #search-btn {
   background-color: var(--tertiary-color);
 }
+
 /*Main End*/
 
 /* favourite button styles */

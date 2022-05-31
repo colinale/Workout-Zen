@@ -29,6 +29,7 @@ header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
+  padding-bottom: 20px;
 }
 
 header img {
@@ -50,9 +51,6 @@ header h2 {
   font-size: 25px;
 }
 
-.nav-index-div {
-  padding-top: 100px;
-}
 /*Header End*/
 
 /*Main Styling*/
@@ -61,18 +59,21 @@ main {
   background-size: cover;
 }
 
-
-
 /* .description {
   border-bottom: var(--quarternary-color) solid 1px;
 } */
 
-.button-div, .exercise-template {
+.button-div,
+.exercise-template {
   background-color: var(--secondary-color);
 }
 
 #goback-btn {
   text-align: center;
   background: lightgray;
+}
+
+#goback-btn :hover {
+  color: var(--tertiary-color);
 }
 /*Main End*/

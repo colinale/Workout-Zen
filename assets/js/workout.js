@@ -11,6 +11,8 @@ var buttonClickHandler = function (event) {
     exerciseListAbs();
   } else if (muscleGroup == "arms") {
     exerciseListArms();
+  } else if (muscleGroup == "legs") {
+    exerciseListLegs();
   }
 };
 //event listener for buttonClickHandler
@@ -36,6 +38,7 @@ var exerciseListAbs = function () {
           var absExerciseLiEl = document.createElement("li");
           absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a> " + " <button class='ml-5' id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
           absExerciseLiEl.id = "textInfo";
+          absExerciseLiEl.setAttribute("class", "exerciseList");
           absExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
@@ -66,8 +69,7 @@ var exerciseListArms = function () {
     // request was successful
     if (response.ok) {
       response.json().then(function (data) {
-        var exercises = data;
-        var bicepCurls = data.results[19];
+        var bicepCurls = data.results[20];
         var tricepPress = data.results[169];
         var pikePush = data.results[139];
 
@@ -80,8 +82,8 @@ var exerciseListArms = function () {
           //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
           armsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + armsExerciseArray[i].name + "</a> " + " <button class='ml-5' id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
           armsExerciseLiEl.id = "textInfo";
+          armsExerciseLiEl.setAttribute("class", "exerciseList");
           armsExerciseLiEl.addEventListener("click", function (evt) {
-            console.log(evt.target.innerHTML);
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
           });
@@ -96,6 +98,13 @@ var exerciseListArms = function () {
           localStorage.setItem("favourited", exerciseFav);
           console.log(localStorage);
           displayFavourites();
+
+          //making sure that there aren't duplicates
+          // if (!exerciseFav) {
+          //   localStorage.setItem("favourited", exerciseFav);
+          //   console.log(localStorage);
+          //   displayFavourites();
+          // }
         });
       });
     }
@@ -106,9 +115,44 @@ var exerciseListArms = function () {
 var displayFavourites = function () {
   var favListEl = document.querySelector("#fav-list");
   var savedFavourites = localStorage.getItem("favourited");
-  console.log(savedFavourites);
+  //console.log(savedFavourites);
 
   var favInfoDiv = document.createElement("div");
   favInfoDiv.innerHTML = savedFavourites;
   favListEl.appendChild(favInfoDiv);
+
+  //making sure that there aren't duplicates
+  //if (!savedFavourites) {}
+
+  //clear favourites div function
+};
+
+var exerciseListLegs = function () {
+  var exerciseApi = "https://wger.de/api/v2/exercise/?language=2&limit=200";
+
+  // make a get request to url
+  fetch(exerciseApi).then(function (response) {
+    // request was successful
+    if (response.ok) {
+      response.json().then(function (data) {
+        var forwardLunge = data.results[71];
+        var squats = data.results[194];
+        var highKnees = data.results[86];
+
+        exerciseListUlEl.innerHTML = "";
+        legsExerciseArray = [forwardLunge, squats, highKnees];
+        //display each exercise name
+        for (var i = 0; i < legsExerciseArray.length; i++) {
+          var legsExerciseLiEl = document.createElement("li");
+          legsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + legsExerciseArray[i].name + "</a>";
+          legsExerciseLiEl.setAttribute("class", "exerciseList");
+          legsExerciseLiEl.addEventListener("click", function (evt) {
+            var exerciseName = evt.target.innerHTML;
+            localStorage.setItem("exercises", exerciseName);
+          });
+          exerciseListUlEl.appendChild(legsExerciseLiEl);
+        }
+      });
+    }
+  });
 };
