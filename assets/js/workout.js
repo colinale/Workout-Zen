@@ -38,9 +38,7 @@ var exerciseListAbs = function () {
         for (var i = 0; i < absExerciseArray.length; i++) {
           var absExerciseLiEl = document.createElement("li");
           absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a>";
-          // console.log(absExerciseArray[i].name);
           absExerciseLiEl.addEventListener("click", function (evt) {
-            console.log(evt.target.innerHTML);
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
           });
@@ -61,7 +59,7 @@ var exerciseListArms = function () {
     // request was successful
     if (response.ok) {
       response.json().then(function (data) {
-        var bicepCurls = data.results[19];
+        var bicepCurls = data.results[20];
         var tricepPress = data.results[169];
         var pikePush = data.results[139];
 
@@ -72,9 +70,7 @@ var exerciseListArms = function () {
         for (var i = 0; i < armsExerciseArray.length; i++) {
           var armsExerciseLiEl = document.createElement("li");
           armsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + armsExerciseArray[i].name + "</a>";
-          // console.log(absExerciseArray[i].name);
           armsExerciseLiEl.addEventListener("click", function (evt) {
-            console.log(evt.target.innerHTML);
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
           });
@@ -97,9 +93,6 @@ var exerciseListLegs = function () {
         var forwardLunge = data.results[71];
         var squats = data.results[194];
         var highKnees = data.results[86];
-        console.log(forwardLunge);
-        console.log(squats);
-        console.log(highKnees);
 
         exerciseListUlEl.innerHTML = "";
         legsExerciseArray = [forwardLunge, squats, highKnees];
@@ -107,9 +100,7 @@ var exerciseListLegs = function () {
         for (var i = 0; i < legsExerciseArray.length; i++) {
           var legsExerciseLiEl = document.createElement("li");
           legsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + legsExerciseArray[i].name + "</a>";
-          // console.log(absExerciseArray[i].name);
           legsExerciseLiEl.addEventListener("click", function (evt) {
-            console.log(evt.target.innerHTML);
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
           });
