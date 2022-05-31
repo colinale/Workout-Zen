@@ -37,7 +37,7 @@ var exerciseListAbs = function () {
         for (var i = 0; i < absExerciseArray.length; i++) {
           var absExerciseLiEl = document.createElement("li");
           absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a>";
-          absExerciseLiEl.setAttribute("class", "hover-fn");
+          absExerciseLiEl.setAttribute("class", "exerciseList");
           absExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
@@ -69,7 +69,7 @@ var exerciseListArms = function () {
         for (var i = 0; i < armsExerciseArray.length; i++) {
           var armsExerciseLiEl = document.createElement("li");
           armsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + armsExerciseArray[i].name + "</a>";
-          armsExerciseLiEl.setAttribute("class", "hover-fn");
+          armsExerciseLiEl.setAttribute("class", "exerciseList");
           armsExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);
@@ -99,7 +99,7 @@ var exerciseListLegs = function () {
         for (var i = 0; i < legsExerciseArray.length; i++) {
           var legsExerciseLiEl = document.createElement("li");
           legsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + legsExerciseArray[i].name + "</a>";
-          legsExerciseLiEl.setAttribute("class", "hover-fn");
+          legsExerciseLiEl.setAttribute("class", "exerciseList");
           legsExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
             localStorage.setItem("exercises", exerciseName);

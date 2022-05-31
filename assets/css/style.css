@@ -74,7 +74,11 @@ main {
 }
 
 .search :hover {
-  color: #d73d23;
+  color: var(--tertiary-color);
+}
+
+.exerciseList :hover {
+  color: var(--primary-color);
 }
 
 #target-abs,
