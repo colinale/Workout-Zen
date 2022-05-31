@@ -80,7 +80,7 @@ var exerciseListArms = function () {
         for (var i = 0; i < armsExerciseArray.length; i++) {
           var armsExerciseLiEl = document.createElement("li");
           //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
-          armsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + armsExerciseArray[i].name + "</a> " + " <button class='ml-5' id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
+          armsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + armsExerciseArray[i].name + "</a> " + " <button class='heart-btn ml-5' id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
           armsExerciseLiEl.id = "textInfo";
           armsExerciseLiEl.setAttribute("class", "exerciseList");
           armsExerciseLiEl.addEventListener("click", function (evt) {
@@ -92,8 +92,8 @@ var exerciseListArms = function () {
 
         //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
         var favouriteExerciseEl = document.getElementById("favBtn");
-        favouriteExerciseEl.addEventListener("click", function () {
-          var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
+        favouriteExerciseEl.addEventListener("click", function (e) {
+          if (e.target.classList.contains("heart-btn")) var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
           //console.log(exerciseFav);
           localStorage.setItem("favourited", exerciseFav);
           console.log(localStorage);
