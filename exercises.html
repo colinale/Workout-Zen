@@ -20,25 +20,35 @@
         <h2>Taking the Stress Out of Working Out</h2>
       </div>
     </header>
-
-    <main class="flex sm:flex-col lg:flex-row">
-      <div class="button-div mx-auto rounded my-2 py-2.5 sm:w-5/6 lg:w-1/3 lg:py-auto lg:mt-0 lg:mx-1 ">
-        <button class="button w-1/2 mx-auto mt-1 text-black rounded" id="goback-btn"><a href="./index.html">Go Back</a></button>
+    <!-- Main -->
+    <main class="bg-fixed w-7/8 mb-5">
+      <!-- Quotes -->
+      <div class="section-div flex flex-col py-2 align-center">
+        <section class="quote-container w-5/6 mx-auto my-1.5 lg:my-5 lg:text-lg">
+            <h3 class="quote text-center text-white" id="quoteText"></h3>
+            <h4 class="author text-center text-white" id="quoteAuthor"></h4>
+        </section>
       </div>
-
-      <div class="exercise-template mx-auto rounded my-2 py-2.5 sm:w-5/6 lg:w-2/3 lg:py-auto lg:mt-0 lg:mr-1">
-        <div id="title"></div>
-        <div id="description"></div>
-        <div id="video"></div>
+      <!-- Go Back/Exercise Div -->
+      <div class="flex sm:flex-col lg:flex-row w-5/6 mx-auto">
+        <!-- Go Back -->
+        <div class="button-div flex flex-col mx-auto rounded py-2.5 sm:w-5/6 lg:w-1/3 lg:py-auto lg:mt-0 lg:mx-1 h-fit">
+          <button class="button w-1/2 mx-auto mt-1 text-black rounded" id="goback-btn"><a href="./index.html">Go Back</a></button>
+        </div>
+        <!-- Exercise -->
+        <div class="exercise-template mx-auto rounded w-4/5 px-2.5 my-2 py-2.5 sm:w-5/6 lg:w-2/3 lg:py-auto lg:mt-0 lg:mr-1 mx-auto text-white">
+          <div id="title" class="underline"></div>
+          <div id="description"></div>
+          <div id="video"></div>
+        </div>
       </div>
     </main>
-
     <!-- Footer -->
     <footer>
       <h6 class="footer-info text-center text-white">&copy; Workout Zen 2022</h6>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- <script src="./assets/js/quotes.js"></script> -->
+    <script src="./assets/js/quotes.js"></script>
     <script src="./assets/js/exercises.js"></script>
   </body>
 </html>
