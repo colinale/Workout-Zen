@@ -3,7 +3,6 @@
   --primary-color: #0c2a53;
   --secondary-color: #308996;
   --tertiary-color: #d73d23;
-  --quarternary-color: #eea66d;
 }
 /*Varables End*/
 
@@ -59,9 +58,9 @@ main {
   background-size: cover;
 }
 
-/* .description {
-  border-bottom: var(--quarternary-color) solid 1px;
-} */
+.exercise-description {
+  border-bottom: var(--tertiary-color) solid 3px;
+}
 
 .button-div,
 .exercise-template {
@@ -81,3 +80,21 @@ main a :hover {
   color: var(--tertiary-color);
 }
 /*Main End*/
+
+/* Media Queries */
+@media screen and (max-width: 640px){
+  .button-exercise-div{
+    flex-direction: column;
+  }
+
+  .button-div{
+    /* margin-left: 8% */
+    width: 100%;
+  }
+
+  .exercise-template{
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+/* Media Queries End */
