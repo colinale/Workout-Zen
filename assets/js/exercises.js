@@ -17,8 +17,10 @@ var exerciseData = function () {
             var resultData = exercise;
             exerciseTitleEl.innerHTML = "<h2 class= 'text-white'>" + resultData.name + "</h2";
             exerciseDescriptionEl.innerHTML = "<p class= 'text-white'>" + resultData.description + "</p>";
+            exerciseDescriptionEl.setAttribute("class", "exercise-description pb-1");
             var exerciseImg = document.createElement("img");
             exerciseImg.src = "./assets/images/exercise-images/" + resultData.id + ".jpg";
+            exerciseImg.setAttribute("class", "pt-2");
             exerciseImageDivEl.append(exerciseImg);
           }
         });

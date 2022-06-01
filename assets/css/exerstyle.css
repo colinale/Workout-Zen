@@ -3,7 +3,6 @@
   --primary-color: #0c2a53;
   --secondary-color: #308996;
   --tertiary-color: #d73d23;
-  --quarternary-color: #eea66d;
 }
 /*Varables End*/
 
@@ -59,9 +58,9 @@ main {
   background-size: cover;
 }
 
-/* .description {
-  border-bottom: var(--quarternary-color) solid 1px;
-} */
+.exercise-description {
+  border-bottom: var(--tertiary-color) solid 3px;
+}
 
 .button-div,
 .exercise-template {
