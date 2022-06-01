@@ -2,7 +2,6 @@
 var muscleEl = document.querySelector("#target-btn");
 var exerciseButtonsEl = document.querySelector("#exercise-buttons");
 var exerciseListUlEl = document.querySelector(".exercise-list");
-var alertDivEl = document.querySelector(".alert-div");
 
 //this function handles the user clicking each muscle button
 var buttonClickHandler = function (event) {
@@ -51,7 +50,7 @@ var exerciseListAbs = function () {
           absExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
             //console.log(exerciseName);
-            localStorage.setItem("exercises", exerciseName);
+              localStorage.setItem("exercises", exerciseName);
           });
           exerciseListUlEl.appendChild(absExerciseLiEl);
         }
@@ -103,15 +102,6 @@ var exerciseListArms = function () {
   });
 };
 
-//favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
-$("body").on("click", ".heart-btn", function (e) {
-  //console.log(e.target.parentNode.previousElementSibling.textContent);
-  var exerciseFav = e.target.parentNode.previousElementSibling.textContent;
-  console.log(exerciseFav);
-  localStorage.setItem("favourited", exerciseFav);
-  console.log(localStorage);
-  displayFavourites();
-});
 
 //this function fetches the exercises from the exercise api for legs and displays the exercises
 var exerciseListLegs = function () {
@@ -155,6 +145,16 @@ var exerciseListLegs = function () {
   });
 };
 
+//jQuery on click to target each heart and save exercise name to favorites
+$("body").on("click", ".heart-btn", function (e) {
+  //console.log(e.target.parentNode.previousElementSibling.textContent);
+  var exerciseFav = e.target.parentNode.previousElementSibling.textContent;
+  console.log(exerciseFav);
+  localStorage.setItem("favourited", exerciseFav);
+  console.log(localStorage);
+  displayFavourites();
+});
+
 //function for displaying favourite list
 var displayFavourites = function () {
   var favListEl = document.querySelector("#fav-list");
@@ -163,6 +163,7 @@ var displayFavourites = function () {
 
   var favInfoDiv = document.createElement("div");
   favInfoDiv.innerHTML = savedFavourites;
+  favInfoDiv.setAttribute("class", "text-white ml-2.5")
   favListEl.appendChild(favInfoDiv);
 
   //making sure that there aren't duplicates
@@ -172,3 +173,5 @@ var displayFavourites = function () {
 
   //clear favourites div function
 };
+
+displayFavourites();

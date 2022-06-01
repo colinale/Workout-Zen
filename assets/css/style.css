@@ -68,8 +68,8 @@ main {
   background-size: cover;
 }
 
-.search,
-.results {
+.fav-container,
+.search, .results {
   background-color: var(--secondary-color);
 }
 
@@ -81,21 +81,14 @@ main {
   color: var(--primary-color);
 }
 
+.fav-btn {
+  margin-left: 30px;
+}
+
 #target-abs,
 #target-arms,
 #target-legs {
   text-align: center;
   background: lightgray;
 }
-
-#search-btn {
-  background-color: var(--tertiary-color);
-}
-
 /*Main End*/
-
-/* favourite button styles */
-
-.fav-btn {
-  margin-left: 30px;
-}
