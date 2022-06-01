@@ -3,7 +3,6 @@
   --primary-color: #0c2a53;
   --secondary-color: #308996;
   --tertiary-color: #d73d23;
-  --quarternary-color: #eea66d;
 }
 /*Varables End*/
 
@@ -68,8 +67,8 @@ main {
   background-size: cover;
 }
 
-.search,
-.results {
+.fav-container,
+.search, .results {
   background-color: var(--secondary-color);
 }
 
@@ -81,21 +80,41 @@ main {
   color: var(--primary-color);
 }
 
+.fav-btn {
+  margin-left: 30px;
+}
+
 #target-abs,
 #target-arms,
 #target-legs {
   text-align: center;
   background: lightgray;
 }
-
-#search-btn {
-  background-color: var(--tertiary-color);
-}
-
 /*Main End*/
 
-/* favourite button styles */
-
-.fav-btn {
-  margin-left: 30px;
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+  .search-exercise-div {
+    padding-top: 50px;
+  }
 }
+
+@media screen and (max-width: 640px){
+ .search-exercise-div {
+   flex-direction: column;
+   width: 100%;
+ }
+
+.buttons-div{
+  width: 100%;
+}
+
+.results {
+  width: 83%;
+}
+
+#exercise-buttons{
+  margin-left: 8%;
+}
+}
+/* Media Queries End */
