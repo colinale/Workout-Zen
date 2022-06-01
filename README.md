@@ -48,14 +48,21 @@ The following image is a screenshot of the live site on GitHub Pages:
 
 The site is navagable via the muscle group buttons (to display the exercise list), the exercises within the exercise list (to redirect to the exercise page and render the data), the go back button on the exercise page (to redirect the user back to the index page), the favorites button(NOT SURE ABOUT THIS YET), and the submit button (NOT SURE HERE EITHER).
 
-## Creation
-NEED TO FILL THIS OUT
-
 ## Credits
 - [Design Inspiration](https://dribbble.com/shots/18129733-Fitness-Landing-Page-UI-Design)
 - [Background Triangles](https://www.123freevectors.com/abstract-blue-polygonal-triangular-background-130903/)
 - [Lotus Icon](https://www.svgrepo.com/svg/194899/lotus-flower)
 - [Barbell Icon](https://thenounproject.com/icon/barbell-232902/)
+- Exercise Images:
+    * [Crunches](https://www.pinterest.com/pin/151433606204448550/)
+    * [Plank](https://mirafit.co.uk/blog/how-to-do-the-perfect-plank-a-beginners-guide/)
+    * [Flutter Kicks](https://fitmw.com/transverse-abdominal/)
+    * [Bicep Curls With Dumbell](https://www.myupchar.com/en/fitness/standing-dumbbell-curl)
+    * [Seated Tricep Press](https://criticalbody.com/seated-dumbbell-overhead-tricep-extension/)
+    * [Pike Pushup](https://whitecoattrainer.com/web-stories/in-this-post-we-are-going-to-cover-the-best-of-the-best-bodyweight-shoulder-exercises-we-will-go-over-21-different-exercises-each-one-focusing-on-a-specific-muscle-of-the-shoulder-complex-story)
+    * [Forward Lunge](https://www.24life.com/master-this-move-lunge/)
+    * [Squats](https://www.istockphoto.com/photo/side-view-of-a-young-woman-in-sportswear-doing-squats-at-blue-background-in-studio-gm1217661802-355526830)
+    * [High Knees](https://workouttrends.com/how-to-do-high-knees)
 
 ## License
 MIT License

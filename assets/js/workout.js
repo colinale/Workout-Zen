@@ -122,7 +122,7 @@ var exerciseListLegs = function () {
           //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
           var anchor = document.createElement("a");
           anchor.href = "./exercises.html";
-          anchor.textContent = armsExerciseArray[i].name;
+          anchor.textContent = legsExerciseArray[i].name;
           var favBtn = document.createElement("button");
           favBtn.setAttribute("class", "heart-btn ml-5");
           favBtn.innerHTML = "<i class='fa-regular fa-heart'>" + "</i>";
@@ -173,4 +173,4 @@ var displayFavourites = function () {
   //clear favourites div function
 };
 
-// displayFavourites();
+displayFavourites();
