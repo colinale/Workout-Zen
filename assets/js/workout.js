@@ -49,7 +49,6 @@ var exerciseListAbs = function () {
           absExerciseLiEl.setAttribute("class", "exerciseList");
           absExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
-            //console.log(exerciseName);
               localStorage.setItem("exercises", exerciseName);
           });
           exerciseListUlEl.appendChild(absExerciseLiEl);
@@ -102,7 +101,6 @@ var exerciseListArms = function () {
   });
 };
 
-
 //this function fetches the exercises from the exercise api for legs and displays the exercises
 var exerciseListLegs = function () {
   var exerciseApi = "https://wger.de/api/v2/exercise/?language=2&limit=200";
@@ -147,12 +145,13 @@ var exerciseListLegs = function () {
 
 //jQuery on click to target each heart and save exercise name to favorites
 $("body").on("click", ".heart-btn", function (e) {
-  //console.log(e.target.parentNode.previousElementSibling.textContent);
+  var exerciseFavoritesArray = JSON.parse(window.localStorage.getItem("exerciseFavoritesArray")) || [];
   var exerciseFav = e.target.parentNode.previousElementSibling.textContent;
-  console.log(exerciseFav);
-  localStorage.setItem("favourited", exerciseFav);
-  console.log(localStorage);
-  displayFavourites();
+  if(!exerciseFavoritesArray.includes(exerciseFav)){
+   exerciseFavoritesArray.push(exerciseFav);
+  };
+  localStorage.setItem("favourited", JSON.stringify(exerciseFavoritesArray));
+  // displayFavourites();
 });
 
 //function for displaying favourite list
@@ -163,15 +162,11 @@ var displayFavourites = function () {
 
   var favInfoDiv = document.createElement("div");
   favInfoDiv.innerHTML = savedFavourites;
-  favInfoDiv.setAttribute("class", "text-white ml-2.5")
-  favListEl.appendChild(favInfoDiv);
-
+  favInfoDiv.setAttribute("class", "text-white ml-2.5"); 
   //making sure that there aren't duplicates
-  // if (savedFavourites) {
-  //   return;
-  // }
-
+     favListEl.appendChild(favInfoDiv);
+ 
   //clear favourites div function
 };
 
-displayFavourites();
+// displayFavourites();

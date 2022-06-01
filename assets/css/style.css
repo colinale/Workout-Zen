@@ -92,3 +92,30 @@ main {
   background: lightgray;
 }
 /*Main End*/
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+  .search-exercise-div {
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 640px){
+ .search-exercise-div {
+   flex-direction: column;
+   width: 100%;
+ } 
+
+.buttons-div{
+  width: 100%;
+}
+
+.results {
+  width: 83%;
+}
+
+#exercise-buttons{
+  margin-left: 8%;
+}
+}
+/* Media Queries End */
