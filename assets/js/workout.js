@@ -145,14 +145,18 @@ var exerciseListLegs = function () {
 
 //jQuery on click to target each heart and save exercise name to favorites
 $("body").on("click", ".heart-btn", function (e) {
-  var exerciseFavoritesArray = JSON.parse(window.localStorage.getItem("exerciseFavoritesArray")) || [];
+  //trying to see if I can push into an array and then I would loop over that array in the display function, so far just overwriting!
+  // var exerciseFavoritesArray = JSON.parse(window.localStorage.getItem("exerciseFavoritesArray")) || [];
   var exerciseFav = e.target.parentNode.previousElementSibling.textContent;
-  if(!exerciseFavoritesArray.includes(exerciseFav)){
-   exerciseFavoritesArray.push(exerciseFav);
-  };
-  localStorage.setItem("favourited", JSON.stringify(exerciseFavoritesArray));
-  // displayFavourites();
+  // if(!exerciseFavoritesArray.includes(exerciseFav)){
+  //  exerciseFavoritesArray.push(exerciseFav);
+  // };
+  localStorage.setItem("favourited", exerciseFav);
+  // localStorage.setItem("favourited", JSON.stringify(exerciseFavoritesArray));
+  console.log(localStorage);
+  displayFavourites();
 });
+
 
 //function for displaying favourite list
 var displayFavourites = function () {
