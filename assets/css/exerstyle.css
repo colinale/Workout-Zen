@@ -80,3 +80,21 @@ main a :hover {
   color: var(--tertiary-color);
 }
 /*Main End*/
+
+/* Media Queries */
+@media screen and (max-width: 640px){
+  .button-exercise-div{
+    flex-direction: column;
+  }
+
+  .button-div{
+    /* margin-left: 8% */
+    width: 100%;
+  }
+
+  .exercise-template{
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+/* Media Queries End */
