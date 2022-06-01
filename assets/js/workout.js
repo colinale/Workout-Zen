@@ -36,25 +36,25 @@ var exerciseListAbs = function () {
         //display each exercise name
         for (var i = 0; i < absExerciseArray.length; i++) {
           var absExerciseLiEl = document.createElement("li");
-          absExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + absExerciseArray[i].name + "</a> " + " <button class='ml-5' id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
+          //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
+          var anchor = document.createElement("a");
+          anchor.href = "./exercises.html";
+          anchor.textContent = absExerciseArray[i].name;
+          var favBtn = document.createElement("button");
+          favBtn.setAttribute("class", "heart-btn ml-5");
+          favBtn.innerHTML = "<i class='fa-regular fa-heart'>" + "</i>";
+
+          absExerciseLiEl.append(anchor);
+          absExerciseLiEl.append(favBtn);
           absExerciseLiEl.id = "textInfo";
           absExerciseLiEl.setAttribute("class", "exerciseList");
           absExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
+            //console.log(exerciseName);
             localStorage.setItem("exercises", exerciseName);
           });
           exerciseListUlEl.appendChild(absExerciseLiEl);
         }
-
-        //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
-        var favouriteExerciseEl = document.getElementById("favBtn");
-        favouriteExerciseEl.addEventListener("click", function () {
-          var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
-          //console.log(exerciseFav);
-          localStorage.setItem("favourited", exerciseFav);
-          console.log(localStorage);
-          displayFavourites();
-        });
       });
     }
   });
@@ -80,38 +80,38 @@ var exerciseListArms = function () {
         for (var i = 0; i < armsExerciseArray.length; i++) {
           var armsExerciseLiEl = document.createElement("li");
           //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
-          armsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + armsExerciseArray[i].name + "</a> " + " <button class='heart-btn ml-5' id='favBtn'>" + "<i class='fa-regular fa-heart'>" + "</i>" + "</button>";
+          var anchor = document.createElement("a");
+          anchor.href = "./exercises.html";
+          anchor.textContent = armsExerciseArray[i].name;
+          var favBtn = document.createElement("button");
+          favBtn.setAttribute("class", "heart-btn ml-5");
+          favBtn.innerHTML = "<i class='fa-regular fa-heart'>" + "</i>";
+
+          armsExerciseLiEl.append(anchor);
+          armsExerciseLiEl.append(favBtn);
           armsExerciseLiEl.id = "textInfo";
           armsExerciseLiEl.setAttribute("class", "exerciseList");
           armsExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
+            //console.log(exerciseName);
             localStorage.setItem("exercises", exerciseName);
           });
           exerciseListUlEl.appendChild(armsExerciseLiEl);
         }
-
-        //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
-        var favouriteExerciseEl = document.getElementById("favBtn");
-        favouriteExerciseEl.addEventListener("click", function (e) {
-          if (e.target.classList.contains("heart-btn")) {
-            var exerciseFav = document.getElementById("textInfo").getElementsByTagName("a")[0].textContent;
-            //console.log(exerciseFav);
-            localStorage.setItem("favourited", exerciseFav);
-            console.log(localStorage);
-            displayFavourites();
-          }
-
-          //making sure that there aren't duplicates
-          // if (!exerciseFav) {
-          //   localStorage.setItem("favourited", exerciseFav);
-          //   console.log(localStorage);
-          //   displayFavourites();
-          // }
-        });
       });
     }
   });
 };
+
+//favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
+$("body").on("click", ".heart-btn", function (e) {
+  //console.log(e.target.parentNode.previousElementSibling.textContent);
+  var exerciseFav = e.target.parentNode.previousElementSibling.textContent;
+  console.log(exerciseFav);
+  localStorage.setItem("favourited", exerciseFav);
+  console.log(localStorage);
+  displayFavourites();
+});
 
 //this function fetches the exercises from the exercise api for legs and displays the exercises
 var exerciseListLegs = function () {
@@ -131,10 +131,21 @@ var exerciseListLegs = function () {
         //display each exercise name
         for (var i = 0; i < legsExerciseArray.length; i++) {
           var legsExerciseLiEl = document.createElement("li");
-          legsExerciseLiEl.innerHTML = "<a href ='./exercises.html'>" + legsExerciseArray[i].name + "</a>";
+          //favourites function when user clicks the heart it saves the exercise as a favourite exercise and then displays it under
+          var anchor = document.createElement("a");
+          anchor.href = "./exercises.html";
+          anchor.textContent = armsExerciseArray[i].name;
+          var favBtn = document.createElement("button");
+          favBtn.setAttribute("class", "heart-btn ml-5");
+          favBtn.innerHTML = "<i class='fa-regular fa-heart'>" + "</i>";
+
+          legsExerciseLiEl.append(anchor);
+          legsExerciseLiEl.append(favBtn);
+          legsExerciseLiEl.id = "textInfo";
           legsExerciseLiEl.setAttribute("class", "exerciseList");
           legsExerciseLiEl.addEventListener("click", function (evt) {
             var exerciseName = evt.target.innerHTML;
+            //console.log(exerciseName);
             localStorage.setItem("exercises", exerciseName);
           });
           exerciseListUlEl.appendChild(legsExerciseLiEl);
@@ -155,7 +166,9 @@ var displayFavourites = function () {
   favListEl.appendChild(favInfoDiv);
 
   //making sure that there aren't duplicates
-  //if (savedFavourites) {  }
+  // if (savedFavourites) {
+  //   return;
+  // }
 
   //clear favourites div function
 };
