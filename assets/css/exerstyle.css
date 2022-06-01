@@ -68,12 +68,16 @@ main {
   background-color: var(--secondary-color);
 }
 
-#goback-btn {
+.button-div {
   text-align: center;
+  padding-right: 10px;
+}
+
+#goback-btn {
   background: lightgray;
 }
 
-#goback-btn :hover {
+main a :hover {
   color: var(--tertiary-color);
 }
 /*Main End*/
