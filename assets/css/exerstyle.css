@@ -47,7 +47,7 @@ header h1 {
 
 header h2 {
   color: #d73d23;
-  font-size: 25px;
+  font-size: 40px;
 }
 
 /*Header End*/
@@ -95,6 +95,14 @@ main a :hover {
   .exercise-template{
     width: 100%;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
   }
 }
 /* Media Queries End */
