@@ -162,7 +162,6 @@ $("body").on("click", ".heart-btn", function (e) {
 var displayFavourites = function () {
   favListEl.innerHTML = "";
   var savedFavouritesArray = JSON.parse(localStorage.getItem("exerciseFavoritesArray")) || [];
-  console.log(savedFavouritesArray);
 //loop over local storage array
 for (var i = 0; i < savedFavouritesArray.length; i++) {
   var favInfoDiv = document.createElement("div");
@@ -172,3 +171,9 @@ for (var i = 0; i < savedFavouritesArray.length; i++) {
 };
 
 displayFavourites();
+
+//event listener for clearing favorites list
+$("body").on("click", ".clear-btn", function () {
+  favListEl.innerHTML = "";
+  localStorage.clear();
+  });
