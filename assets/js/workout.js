@@ -2,6 +2,7 @@
 var muscleEl = document.querySelector("#target-btn");
 var exerciseButtonsEl = document.querySelector("#exercise-buttons");
 var exerciseListUlEl = document.querySelector(".exercise-list");
+var favListEl = document.querySelector("#fav-list");
 
 //this function handles the user clicking each muscle button
 var buttonClickHandler = function (event) {
@@ -145,32 +146,32 @@ var exerciseListLegs = function () {
 
 //jQuery on click to target each heart and save exercise name to favorites
 $("body").on("click", ".heart-btn", function (e) {
-  //trying to see if I can push into an array and then I would loop over that array in the display function, so far just overwriting!
-  // var exerciseFavoritesArray = JSON.parse(window.localStorage.getItem("exerciseFavoritesArray")) || [];
+//setting in local storage
+  var exerciseFavoritesArray = JSON.parse(window.localStorage.getItem("exerciseFavoritesArray")) || [];
   var exerciseFav = e.target.parentNode.previousElementSibling.textContent;
-  // if(!exerciseFavoritesArray.includes(exerciseFav)){
-  //  exerciseFavoritesArray.push(exerciseFav);
-  // };
-  localStorage.setItem("favourited", exerciseFav);
-  // localStorage.setItem("favourited", JSON.stringify(exerciseFavoritesArray));
+  if(!exerciseFavoritesArray.includes(exerciseFav)){
+   exerciseFavoritesArray.push(exerciseFav);
+  };
+  localStorage.setItem("exerciseFavoritesArray", JSON.stringify(exerciseFavoritesArray));
   console.log(localStorage);
   displayFavourites();
 });
 
 
+
 //function for displaying favourite list
 var displayFavourites = function () {
-  var favListEl = document.querySelector("#fav-list");
-  var savedFavourites = localStorage.getItem("favourited");
-  //console.log(savedFavourites);
-
-  var favInfoDiv = document.createElement("div");
-  favInfoDiv.innerHTML = savedFavourites;
-  favInfoDiv.setAttribute("class", "text-white ml-2.5"); 
-  //making sure that there aren't duplicates
-     favListEl.appendChild(favInfoDiv);
+  favListEl.innerHTML = "";
+  var savedFavouritesArray = JSON.parse(localStorage.getItem("exerciseFavoritesArray")) || [];
+  console.log(savedFavouritesArray);
+//loop here!
+  // var favInfoDiv = document.createElement("div");
+  // favInfoDiv.innerHTML = savedFavourites;
+  // favInfoDiv.setAttribute("class", "text-white ml-2.5"); 
+  // //making sure that there aren't duplicates
+  //    favListEl.appendChild(favInfoDiv);
  
-  //clear favourites div function
+  // //clear favourites div function
 };
 
 displayFavourites();
