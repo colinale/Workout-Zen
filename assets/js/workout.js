@@ -153,7 +153,6 @@ $("body").on("click", ".heart-btn", function (e) {
    exerciseFavoritesArray.push(exerciseFav);
   };
   localStorage.setItem("exerciseFavoritesArray", JSON.stringify(exerciseFavoritesArray));
-  console.log(localStorage);
   displayFavourites();
 });
 
@@ -164,14 +163,12 @@ var displayFavourites = function () {
   favListEl.innerHTML = "";
   var savedFavouritesArray = JSON.parse(localStorage.getItem("exerciseFavoritesArray")) || [];
   console.log(savedFavouritesArray);
-//loop here!
-  // var favInfoDiv = document.createElement("div");
-  // favInfoDiv.innerHTML = savedFavourites;
-  // favInfoDiv.setAttribute("class", "text-white ml-2.5"); 
-  // //making sure that there aren't duplicates
-  //    favListEl.appendChild(favInfoDiv);
- 
-  // //clear favourites div function
+//loop over local storage array
+for (var i = 0; i < savedFavouritesArray.length; i++) {
+  var favInfoDiv = document.createElement("div");
+  favInfoDiv.innerHTML = savedFavouritesArray[i];
+  favInfoDiv.setAttribute("class", "text-white ml-2.5");
+     favListEl.appendChild(favInfoDiv)}
 };
 
 displayFavourites();
