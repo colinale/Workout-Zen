@@ -4,6 +4,7 @@ var exerciseButtonsEl = document.querySelector("#exercise-buttons");
 var exerciseListUlEl = document.querySelector(".exercise-list");
 var favListEl = document.querySelector("#fav-list");
 
+//this is a comment
 //this function handles the user clicking each muscle button
 var buttonClickHandler = function (event) {
   var muscleGroup = event.target.getAttribute("data-language");
